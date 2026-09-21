@@ -1,0 +1,27 @@
+# Dev / IDE
+.cursor/
+.idea/
+.vscode/
+*.code-workspace
+
+# Secrets / local config
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+*.zip
+*.log
+node_modules/
+
+# Local scripts / temp
+tmp-*.php
+local-*.php

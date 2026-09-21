@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Заметки Арта</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <div class="panel">
+      <div class="tab-bar">
+        <div class="tab-list" id="tab-list" role="tablist"></div>
+        <button
+          type="button"
+          class="tab-new"
+          id="tab-new"
+          title="Новая вкладка"
+          aria-label="Новая вкладка"
+        >
+          +
+        </button>
+      </div>
+      <div class="body">
+        <textarea
+          id="notes"
+          placeholder="Ваши заметки…"
+          spellcheck="true"
+        ></textarea>
+      </div>
+      <footer class="footer">
+        <span class="char-count" id="char-count">символов: 0</span>
+        <div class="font-controls">
+          <button
+            type="button"
+            class="font-btn"
+            id="font-decrease"
+            title="Уменьшить шрифт"
+            aria-label="Уменьшить шрифт"
+          >
+            A−
+          </button>
+          <span class="font-size" id="font-size" aria-hidden="true">14px</span>
+          <button
+            type="button"
+            class="font-btn"
+            id="font-increase"
+            title="Увеличить шрифт"
+            aria-label="Увеличить шрифт"
+          >
+            A+
+          </button>
+        </div>
+      </footer>
+    </div>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

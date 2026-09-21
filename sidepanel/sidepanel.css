@@ -1,0 +1,243 @@
+:root {
+  --bg: #ffffff;
+  --border: #e0e0e0;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --accent: #1a73e8;
+  --header-bg: #f8f9fa;
+  --tab-active-bg: #ffffff;
+  --tab-inactive-bg: #eceff1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tab-bar {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  min-height: 34px;
+  background: var(--tab-inactive-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-list {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+.tab-list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 160px;
+  min-width: 72px;
+  padding: 0 6px 0 10px;
+  border: none;
+  border-right: 1px solid var(--border);
+  background: var(--tab-inactive-bg);
+  color: var(--text);
+  cursor: grab;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.tab.is-dragging {
+  opacity: 0.45;
+  cursor: grabbing;
+}
+
+.tab.drop-before {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.tab.drop-after {
+  box-shadow: inset -3px 0 0 var(--accent);
+}
+
+.tab:hover {
+  background: #e3e7ea;
+}
+
+.tab.is-active {
+  background: var(--tab-active-bg);
+  box-shadow: inset 0 2px 0 var(--accent);
+}
+
+.tab-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 34px;
+}
+
+.tab-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.tab-close:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text);
+}
+
+.tab-rename-input {
+  width: 100%;
+  min-width: 60px;
+  height: 24px;
+  margin: 4px 0;
+  padding: 0 6px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+.tab-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  flex-shrink: 0;
+  border: none;
+  border-left: 1px solid var(--border);
+  background: var(--tab-inactive-bg);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tab-new:hover {
+  background: #e3e7ea;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+textarea {
+  flex: 1;
+  width: 100%;
+  border: none;
+  resize: none;
+  padding: 14px 16px;
+  font: inherit;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border);
+  background: var(--header-bg);
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.char-count {
+  flex: 1;
+  min-width: 0;
+}
+
+.font-controls {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.font-size {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 28px;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--header-bg);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  user-select: none;
+  pointer-events: none;
+}
+
+.font-btn {
+  min-width: 36px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.font-btn:hover:not(:disabled) {
+  background: #eef0f2;
+}
+
+.font-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

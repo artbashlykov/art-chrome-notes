@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Заметки Арта",
+  "version": "1.2.0",
+  "description": "Боковая панель заметок в Chrome — без доступа к содержимому сайтов",
+  "permissions": ["storage", "sidePanel"],
+  "action": {
+    "default_title": "Показать / скрыть Заметки Арта",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+  "commands": {
+    "toggle-sidebar": {
+      "suggested_key": {
+        "default": "Alt+S",
+        "mac": "Alt+S"
+      },
+      "description": "Показать / скрыть сайдбар"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "minimum_chrome_version": "114"
+}

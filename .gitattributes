@@ -1,0 +1,3 @@
+# Exclude hidden files from release archives (git archive).
+/.gitignore     export-ignore
+/.gitattributes export-ignore
